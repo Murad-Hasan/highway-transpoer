@@ -16,7 +16,7 @@ const Header = () => {
       <Link className = "mr-5 text-white text-decoration-none" to="/contact">Contact </Link>
     </Nav>
     {
-      (loggedInUser === true) && <h4 className="text-white">{loggedInUser.name}</h4>  
+      loggedInUser && <h4 className="text-white">{loggedInUser.name}</h4>  
     }
     <Button as={Link} to ="/login" className ="bg-success" variant="primary">Log In</Button>
    </div>
