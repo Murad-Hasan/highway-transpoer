@@ -198,7 +198,7 @@ const Login = () => {
           ) : (
             <input type="submit" className="btn" value="Log In" />
           )}
-          <p className="text-danger">{user.error} </p>
+          {!newUser &&<p className="text-danger">{user.error} </p>}
           {user.success && (
             <p className="text-info">
               User {newUser ? "Created" : "Logged In"} Successfully

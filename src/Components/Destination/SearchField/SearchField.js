@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import vehicleList from "../../FakeData/FakeData";
 import "./SearchField.css";
 
@@ -9,11 +10,17 @@ const SearchField = () => {
     console.log(vehicleDetail);
     const[destinationPlace, setDestinationPlace] = useState({
         isSearch: false,
+        success: false,
         pickFrom: '',
         pickTo: '',
         date: ''
     });
     
+    const proceedsOrder = () => {
+      const successfullyPurchase = {...destinationPlace}
+      successfullyPurchase.success = true;
+    }
+
     const handleSearchPlace = (e) => {
         let isFormValid = true;
     if (e.target.name === 'pickFrom' && e.target.value !== '') {
@@ -50,7 +57,7 @@ const SearchField = () => {
             <h2 className='text-success'>{destinationPlace.pickTo}</h2>
             </div>
         }
-      <div className="search-form">
+    {vehicleDetail ?  <div className="search-form">
         {
             destinationPlace.isSearch? <div> </div> : <form onSubmit={searchFromSubmit}> 
             <div className="form-group">
@@ -100,9 +107,13 @@ const SearchField = () => {
               value="Search"
             />
           </form>
+          
         }
         
-      </div>
+      </div>: <div >
+        <p className="text-danger text-justify m-3">You don't select any category of vehicle, Please select at least one for make a travel from home page. Thank You</p>
+        <div className="text-center" ><Link to={"/home"}><button  type="button" className="btn btn-success">Go To Home</button></Link></div>
+        </div>}
 
        { (destinationPlace.isSearch && vehicleDetail) &&
           <div>
@@ -121,6 +132,7 @@ const SearchField = () => {
             <p>{vehicleDetail.title}</p>
             <p>${vehicleDetail.price}</p>
           </div>
+          <div className="text-center" ><Link to={"/home"}><button  type="button" className="btn btn-success">Go To Home</button></Link></div>
           </div>
         }
        
