@@ -10,16 +10,10 @@ const SearchField = () => {
     console.log(vehicleDetail);
     const[destinationPlace, setDestinationPlace] = useState({
         isSearch: false,
-        success: false,
         pickFrom: '',
         pickTo: '',
         date: ''
     });
-    
-    const proceedsOrder = () => {
-      const successfullyPurchase = {...destinationPlace}
-      successfullyPurchase.success = true;
-    }
 
     const handleSearchPlace = (e) => {
         let isFormValid = true;
