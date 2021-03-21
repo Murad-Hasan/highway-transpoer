@@ -10,7 +10,8 @@ const SearchField = () => {
     const[destinationPlace, setDestinationPlace] = useState({
         isSearch: false,
         pickFrom: '',
-        pickTo: ''
+        pickTo: '',
+        date: ''
     });
     
     const handleSearchPlace = (e) => {
@@ -30,7 +31,7 @@ const SearchField = () => {
     }
 
     const searchFromSubmit = (e) => {
-        if (destinationPlace.pickFrom && destinationPlace.pickTo) {
+        if (destinationPlace.date && destinationPlace.pickFrom && destinationPlace.pickTo) {
             const placeSearched = {...destinationPlace};
             placeSearched.isSearch = true;
             setDestinationPlace(placeSearched);
@@ -43,6 +44,7 @@ const SearchField = () => {
         {
            destinationPlace.isSearch && <div className=' ml-4 mb-5'>
             <h4 className= 'text-center text-danger'>Destination</h4>
+            <h2 className='text-black text-center'>Date:{destinationPlace.date}</h2>
             <h2 className='text-success'>{destinationPlace.pickFrom}</h2>
             <h2>to</h2>
             <h2 className='text-success'>{destinationPlace.pickTo}</h2>
@@ -77,6 +79,21 @@ const SearchField = () => {
                   required
                   />
             </div>
+            
+            <div className="form-group">
+              <label className="ml-4" htmlFor="destination">
+                Date
+              </label>
+                  <input 
+                  type="date"
+                  name= 'date' 
+                  className="form-search-control" 
+                  onBlur = {handleSearchPlace}
+                  id="destination" 
+                  required
+                  />
+            </div>
+            
             <input
               type="submit"
               className="btn btn-primary btn-size mx-auto d-block"

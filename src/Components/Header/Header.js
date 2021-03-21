@@ -13,7 +13,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
-                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/destination">Destination</Nav.Link>
                             <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/contact">Contact</Nav.Link>

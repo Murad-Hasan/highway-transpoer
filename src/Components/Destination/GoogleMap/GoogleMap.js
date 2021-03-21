@@ -18,7 +18,7 @@ const GoogleMapShow = () => {
     return (
         <div style={{ width: "100%", height: "100vh" ,borderRadius:'10px', marginLeft:'10px'}}>
         <MapWrapped
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDJJHWsYYy2BRxNymeCnfVvzhNND5rH1u8`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDs55VlM1bHizKH_jgafKsoHXVxp2nn3HE`}
           loadingElement={<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
