@@ -1,26 +1,28 @@
 import React, { useContext } from "react";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const Header = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   return (
-        <Navbar sticky="top" bg="danger" variant="dark" >
-   <div className="container">
-   <Navbar.Brand><Link className="text-white text-decoration-none" to='/home'>Highway Transports</Link></Navbar.Brand>
-    <Nav className="ml-auto">
-      <Link className = "mr-5 text-white text-decoration-none" to="/home">Home </Link>
-      <Link className = "mr-5 text-white text-decoration-none" to="/destination">Destination </Link>
-      <Link className = "mr-5 text-white text-decoration-none" to="/blog">Blog </Link>
-      <Link className = "mr-5 text-white text-decoration-none" to="/contact">Contact </Link>
-    </Nav>
-    {
-      loggedInUser && <h4 className="text-white">{loggedInUser.name}</h4>  
-    }
-    <Button as={Link} to ="/login" className ="bg-success" variant="primary">Log In</Button>
-   </div>
-  </Navbar>
+  <header>
+            <Navbar sticky="top" bg="danger" variant="dark" expand="lg">
+                <Container>
+                    <Navbar.Brand as={Link} to="/">Highway Transports</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ml-auto">
+                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/">Home</Nav.Link>
+                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/destination">Destination</Nav.Link>
+                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/blog">Blog</Nav.Link>
+                            <Nav.Link className = "mr-4 text-white text-decoration-none" as={Link} to="/contact">Contact</Nav.Link>
+                        </Nav>
+                        {loggedInUser.email || loggedInUser.name ? <h2>{loggedInUser.email}</h2> : <Button className ="bg-success" variant="primary" as={Link} to="/login" variant="danger">Log In</Button>}
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </header>
   )
 };
 

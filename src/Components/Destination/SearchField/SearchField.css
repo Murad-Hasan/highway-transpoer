@@ -1,10 +1,16 @@
 .search-box {
-    height: 400px;
-    width: 300px;
+    height: auto;
+    width: 25vw;
     box-shadow: 5px 5px 10px gray;
     position: relative;
     padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 5px;
+  }
+  @media  screen and (max-width: 767px){
+      .search-box{
+        width: 75vw;
+      }
   }
 
   .search-box::before {
@@ -51,5 +57,5 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   }
   .btn-size{
-      min-width: 250px;
+      min-width: 20vw;
   }

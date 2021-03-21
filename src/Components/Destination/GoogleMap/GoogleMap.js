@@ -16,7 +16,7 @@ function Map() {
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 const GoogleMapShow = () => {
     return (
-        <div style={{ width: "50vw", height: "100vh" ,borderRadius:'10px'}}>
+        <div style={{ width: "100%", height: "100vh" ,borderRadius:'10px', marginLeft:'10px'}}>
         <MapWrapped
           googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDJJHWsYYy2BRxNymeCnfVvzhNND5rH1u8`}
           loadingElement={<div style={{ height: `100%` }} />}

@@ -58,15 +58,15 @@ const Login = () => {
       isFormValid = true;
     }
     if (e.target.name === "password") {
-      isFormValid = e.target.value.length > 5;
+      isFormValid = e.target.value.length >= 6;
       
     }
-    const password = (e.target.name === 'password')
-    const password2 = (e.target.name === 'password2')
+    // const password = (e.target.name === 'password')
+    // const password2 = (e.target.name === 'password2')
 
-    if (password.value !== password2.value) {
-      isFormValid =false;
-    }
+    // if (password.value !== password2.value) {
+    //   isFormValid =false;
+    // }
     if (isFormValid) {
       const newUserInfo = { ...user };
       newUserInfo[e.target.name] = e.target.value;
@@ -84,8 +84,9 @@ const Login = () => {
           newUserErrorInfo.error = "";
           newUserErrorInfo.success = true;
           setUser(newUserErrorInfo);
+          setLoggedInUser(newUserErrorInfo);
+          history.replace(from);
           updateUserName(user.name)
-          setLoggedInUser(newUserErrorInfo)
         })
         .catch((error) => {
           const newUserErrorInfo = { ...user };
@@ -193,7 +194,7 @@ const Login = () => {
           )}
          
           {newUser ? (
-            <input type="submit" className="btn" value="Sign Up" />
+            <input type="submit" className="btn" value="Sign Up & Log In" />
           ) : (
             <input type="submit" className="btn" value="Log In" />
           )}
