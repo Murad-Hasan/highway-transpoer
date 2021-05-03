@@ -1,11 +1,31 @@
-Welcome to my simple react-auth project.
-in this project i use
-1.react
-2.react-router-dom
-3.react-bootstrap
-4.firebase authentication
-5.google-map  
 
-it is help you to get some knowlodge about authentication.
 
-Live Link: https://highway-transports.web.app/
+# Highway-transport
+
+Live Link: [Highway-transport]( https://highway-transports.web.app/ )
+### Short Overveiw
+
+
+> A dynamic and responsive website, Where using firebase authentication , private route.
+ 
+ 
+## Features:
+
+- [x] You can choose Any vehicle to ride from one place to another place
+- [x] Customer or visitor can sign in with Google
+- [x] Individual destination details
+- [x] You can buy a ticket
+- [x] You can Enter Your Destination Place and Date.
+- [x] Using Google Maps.
+
+
+
+## Technology Used:
+- [x] ReactJs
+- [x] React-router-dom
+- [x] React-bootstrap
+- [x] Google Map
+- [x] HTML and CSS
+- [x] Firebase
+- [x] Netlify
+- [x] GitHub
